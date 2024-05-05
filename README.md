@@ -2,6 +2,5 @@
 
 admin account
 
-email: admin@gmail.com
-
-password: admin
+- email: admin@gmail.com
+- password: admin
