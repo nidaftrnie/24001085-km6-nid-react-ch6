@@ -8,6 +8,8 @@ import Home from "./pages/home";
 import Login from "./pages/login";
 import Register from "./pages/register";
 import Details from "./pages/car/details";
+import Edit from "./pages/edit";
+import AddCar from "./pages/addCar";
 
 import "bootstrap/dist/css/bootstrap.min.css"; // apply bootstrap for styling
 import "react-toastify/dist/ReactToastify.css";
@@ -62,12 +64,43 @@ const router = createBrowserRouter([
     ),
   },
   {
+    path: "/cardetails",
+    element: (
+      <Protected>
+        <Navbar />
+        <Container className="mt-5">
+          <Profile />
+        </Container>
+      </Protected>
+    ),
+  },
+  {
     path: "/carmodels/:id",
     element: (
       <Protected>
         <Navbar />
         <Container className="mt-5">
           <Details />
+        </Container>
+      </Protected>
+    ),
+  },
+  {
+    path: "/car/add",
+    element: (
+      <Protected roles={["admin"]}>
+        <Navbar />
+        <AddCar />
+      </Protected>
+    ),
+  },
+  {
+    path: "/cardetails/edit/:id",
+    element: (
+      <Protected roles={["admin"]}>
+        <Navbar />
+        <Container className="mt-5">
+          <Edit />
         </Container>
       </Protected>
     ),

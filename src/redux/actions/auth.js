@@ -121,6 +121,7 @@ export const getProfile =
         }
       }
     } catch (error) {
+      
       toast.error(error?.response?.data?.message);
 
       // because token is not valid, we will delete it from local storage

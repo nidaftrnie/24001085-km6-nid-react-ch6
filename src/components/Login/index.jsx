@@ -45,7 +45,12 @@ function Login() {
           required
         />
       </Form.Group>
-      <Button variant="primary" type="submit" disabled={isLoading}>
+      <Button
+        className="w-100 mb-3"
+        variant="primary"
+        type="submit"
+        disabled={isLoading}
+      >
         {isLoading ? "Processing..." : "Login"}
       </Button>
     </Form>

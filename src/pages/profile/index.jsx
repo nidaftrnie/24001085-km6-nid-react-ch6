@@ -18,10 +18,13 @@ const Profile = () => {
   }, [dispatch]);
 
   return (
-    <Row>
-      <Col md={6} className="offset-md-3">
-        <Card>
-          <Card.Header>My Profile</Card.Header>
+    <Row className="justify-content-center">
+      <Col xs={12} md={6}>
+        <Card className="mb-5">
+          <Card.Header className="text-center">
+            {" "}
+            <h5>My Profile</h5>
+          </Card.Header>
           <Card.Body>
             <Form>
               {!user ? (

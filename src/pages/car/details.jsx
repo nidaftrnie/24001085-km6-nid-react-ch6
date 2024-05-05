@@ -18,31 +18,75 @@ const Details = () => {
 
   return (
     <Row>
-      <Col md={6} className="offset-md-3">
+      <Col md={6} className="offset-md-3 mb-5">
         <Card>
-          <Card.Header>{cardetail?.model}</Card.Header>
           <Card.Body>
-            <Form>
+            <Form className="">
               {!cardetail ? (
                 <>
                   <h2>Loading...</h2>
                 </>
               ) : (
                 <>
-                  {cardetail?.carDetail?.image && (
+                  {cardetail?.image && (
                     <Image
-                      src={cardetail?.carDetail?.image}
+                      src={cardetail?.image}
                       className="img-fluid"
                       rounded
                     />
                   )}
 
-                  <div className={cardetail?.carDetail?.image && "mt-4"}>
+                  <div className={cardetail?.image && "mt-4"}>
                     <Form.Group className="mb-3" controlId="name">
-                      <Form.Label>Model</Form.Label>
+                      <Form.Label>Model ID</Form.Label>
                       <Form.Control
                         type="text"
-                        value={cardetail?.model}
+                        value={cardetail?.car_model_id}
+                        disabled
+                      />
+                    </Form.Group>
+
+                    <Form.Group className="mb-3" controlId="name">
+                      <Form.Label>Plate</Form.Label>
+                      <Form.Control
+                        type="text"
+                        value={cardetail?.plate}
+                        disabled
+                      />
+                    </Form.Group>
+
+                    <Form.Group className="mb-3" controlId="name">
+                      <Form.Label>Rent Per Day</Form.Label>
+                      <Form.Control
+                        type="text"
+                        value={cardetail?.rentPerDay}
+                        disabled
+                      />
+                    </Form.Group>
+
+                    <Form.Group className="mb-3" controlId="name">
+                      <Form.Label>Capacity</Form.Label>
+                      <Form.Control
+                        type="text"
+                        value={cardetail?.capacity}
+                        disabled
+                      />
+                    </Form.Group>
+
+                    <Form.Group className="mb-3" controlId="name">
+                      <Form.Label>Available</Form.Label>
+                      <Form.Control
+                        type="text"
+                        value={cardetail?.available}
+                        disabled
+                      />
+                    </Form.Group>
+
+                    <Form.Group className="mb-3" controlId="name">
+                      <Form.Label>Description</Form.Label>
+                      <Form.Control
+                        type="text"
+                        value={cardetail?.description}
                         disabled
                       />
                     </Form.Group>
