@@ -137,7 +137,7 @@ export const editCar =
 
     try {
       const response = await axios.request(config);
-      
+
       if (response?.data?.message === "Update Success!") {
         toast.success(response?.data?.message);
         dispatch(getCars());
