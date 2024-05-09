@@ -17,7 +17,7 @@ const Home = () => {
 
   return (
     <>
-      <div style={{ backgroundColor: "#f1f3ff" }}>
+      <div style={{ backgroundColor: "#f1f3ff" }} className="mb-5">
         {user?.role == "admin" && (
           <>
             <Button
