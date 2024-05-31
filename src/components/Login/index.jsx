@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button, Form } from "react-bootstrap";
 import { useDispatch } from "react-redux";
-import { login } from "../../redux/actions/auth";
+import {login} from "../../redux/actions/auth"
 
 function Login() {
   const navigate = useNavigate();

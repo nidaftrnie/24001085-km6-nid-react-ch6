@@ -2,6 +2,7 @@ import RegisterComponent from "../../components/Register";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
+import { Link } from "react-router-dom";
 
 function Register() {
   return (
@@ -15,6 +16,9 @@ function Register() {
             <Card.Body>
               <RegisterComponent />
             </Card.Body>
+            <Card.Footer className="text-center">
+              Already have an account? <Link to="/login">Login</Link>{" "}
+            </Card.Footer>
           </Card>
         </Col>
       </Row>

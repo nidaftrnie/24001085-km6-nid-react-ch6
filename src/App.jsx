@@ -2,14 +2,16 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import { ToastContainer } from "react-toastify";
 import { Provider } from "react-redux";
+import { GoogleOAuthProvider } from "@react-oauth/google";
 
 import Navbar from "./components/Navbar";
-import Home from "./pages/home";
+import CariMobil from "./pages/carimobil";
 import Login from "./pages/login";
 import Register from "./pages/register";
 import Details from "./pages/car/details";
 import Edit from "./pages/edit";
 import AddCar from "./pages/addCar";
+import Home from "./pages/home";
 
 import "bootstrap/dist/css/bootstrap.min.css"; // apply bootstrap for styling
 import "react-toastify/dist/ReactToastify.css";
@@ -22,10 +24,21 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      <Protected>
+      <>
         <Navbar />
         <Container className="mt-5">
           <Home />
+        </Container>
+      </>
+    ),
+  },
+  {
+    path: "/carimobil",
+    element: (
+      <Protected>
+        <Navbar />
+        <Container className="mt-5">
+          <CariMobil />
         </Container>
       </Protected>
     ),
@@ -110,9 +123,11 @@ const router = createBrowserRouter([
 function App() {
   return (
     <Provider store={store}>
-      <RouterProvider router={router} />
+      <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}>
+        <RouterProvider router={router} />
 
-      <ToastContainer theme="colored" />
+        <ToastContainer theme="colored" />
+      </GoogleOAuthProvider>
     </Provider>
   );
 }
