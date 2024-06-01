@@ -47,7 +47,6 @@ const router = createBrowserRouter([
     path: "/login",
     element: (
       <NonProtected>
-        <Navbar />
         <Container className="mt-5">
           <Login />
         </Container>
@@ -58,7 +57,6 @@ const router = createBrowserRouter([
     path: "/register",
     element: (
       <NonProtected>
-        <Navbar />
         <Container className="mt-5">
           <Register />
         </Container>
